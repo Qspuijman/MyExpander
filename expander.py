@@ -29,8 +29,8 @@ class Gui:
         root.title("MyExpander")
         root.columnconfigure(0, weight=1)
         root.rowconfigure(0, weight=1)
-        root.bind("<FocusIn>", self.remove_listener)
-        root.bind("<FocusOut>", self.add_listener)
+        root.bind("<Map>", self.remove_listener)
+        root.bind("<Unmap>", self.add_listener)
         root.bind("<Control-Return>", self.save_entry)
         root.bind("<Control-Delete>", self.delete_entry)
 
@@ -143,6 +143,7 @@ class Gui:
                 title=f"Delete entry: '{entry}'",
                 message=f"Are you sure you want to permanently delete entry: '{entry}'?",
             ):
+                self.loaded = []
                 del self.dictionary[entry]
                 self.temp_keys = [key for key in self.dictionary]
                 with open(self.filename, "w", newline="") as csvfile:
