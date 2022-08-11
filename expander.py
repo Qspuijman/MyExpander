@@ -177,7 +177,7 @@ class Gui:
                 self.loaded.remove(handler)
 
 
-# These are not being used yet. For specifying other dictionaries to use. Maybe in future release
+# Get arguments while running with another dict than the default one
 def get_args():
     parser = argparse.ArgumentParser(
         description="While running, this program adds a text expander that expands text in 'dictionary.csv' in the same folder. If no such file exists, it is created. The text is expanded while the program is not in focus. Text expanding stops when the program is in focus or closed"
@@ -191,7 +191,7 @@ def get_args():
     return parser.parse_args().f
 
 
-# These are not being used yet. For specifying other dictionaries to use. Maybe in future release
+# Adding .csv if user forget to specify.
 def process_filename(filename):
     filename = filename.strip()
     if not filename.endswith("csv") and not "." in filename:
@@ -199,11 +199,11 @@ def process_filename(filename):
     return filename
 
 
-# These are not being used yet. For specifying other dictionaries to use. Maybe in future release
+# No reason that this should be it's own function except needing another f at this level cf. cs50 specs. 
 def filename_isvalid(filename):
     return filename.endswith(".csv")
 
-
+# Future release; might add some more fleshed out version.
 def stats(filename):
     rowcount = 0
     with open(filename, "r") as file:
