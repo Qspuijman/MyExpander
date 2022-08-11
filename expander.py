@@ -93,7 +93,8 @@ class Gui:
         else:
             self.update_textbox("")
             for key in self.temp_keys:
-                if key.startswith(self.selected_entry_name.get()):
+                regex = re.escape(self.selected_entry_name.get())
+                if re.search(regex, key,flags=re.IGNORECASE) != None:
                     temp.append(key)
             self.entries_box["values"] = [key for key in sorted(temp)]
 
