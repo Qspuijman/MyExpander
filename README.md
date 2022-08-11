@@ -55,9 +55,9 @@ Ever been annoyed at the amount of text you had to repeat? No more! This basic a
 
 ## Expanding text
 
-- Happens automatically when this program is open. 
+- Happens automatically when this program is minimized. 
     - Just type one of your expander keys followed by "\<spacebar>"
-    - Note: Expanding is disabled when the window is selected to allow to edit keys without expanding them inside the GUI. 
+    - Note: Expanding is disabled when the window is not minimized to allow to edit keys without expanding them inside the GUI. 
 
 # Limitations
 - GUI is very basic in style.
