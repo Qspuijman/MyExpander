@@ -8,6 +8,7 @@ Ever been annoyed at the amount of text you had to repeat? No more! This basic a
 - Choose custom dictionaries. 
 - Intuitive UI with Tkinter
 - Main function embedded in class "Gui", can allow for usage within other Tkinter applications in the future. 
+- Fuzzy-ish search
 
 # Usage
 >'keyboard' module is required. Special thanks to maintainer [boppreh](https://github.com/boppreh):
