@@ -3,7 +3,7 @@ MyExpander
 Ever been annoyed at the amount of text you had to repeat? No more! This basic app is the text expander you (or me at least) have been waiting for. 
 
 # Features
-- Expand any textbody with a expander key followed by a space 
+- Expand any textbody with a expander key followed by a space.
 - Easy and fast creation of expander keys. 
 - Choose custom dictionaries. 
 - Intuitive UI with Tkinter
@@ -60,6 +60,7 @@ Ever been annoyed at the amount of text you had to repeat? No more! This basic a
     - Note: Expanding is disabled when the window is not minimized to allow to edit keys without expanding them inside the GUI. 
 
 # Limitations
+- Only support for Windows
 - GUI is very basic in style.
 - List of keys only show on \<Arrow-Down>.
 - Expand costs some fraction of time. Particularly of note with lengthy expands. 
