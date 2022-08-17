@@ -22,6 +22,9 @@ class Gui:
 
     # Draws the main application window. Sets shortcuts.
     def __init__(self, root, filename) -> None:
+
+        
+
         self.filename = filename
         self.dictionary = self.get_dictionary()
         self.temp_keys = [key for key in self.dictionary]
@@ -45,17 +48,17 @@ class Gui:
 
         # first row of main: combobox, save and delete Button
         savebutton = ttk.Button(main, command=self.save_entry, text="Save")
-        savebutton.grid(row=0, column=2, sticky="E")
+        savebutton.grid(row=0, column=2, sticky="NSE")
 
         # Deletes entries
         deletebutton = ttk.Button(main, command=self.delete_entry, text="Delete")
-        deletebutton.grid(row=0, column=3, sticky="E")
+        deletebutton.grid(row=0, column=3, sticky="NSE")
 
         # Combobox for the entries in the dict
         self.selected_entry_name = StringVar()
         self.entries_box = ttk.Combobox(
             main,
-            textvariable=self.selected_entry_name,
+            textvariable=self.selected_entry_name, font=('Verdana', 10)
         )
         self.entries_box["values"] = [key for key in sorted(self.temp_keys)]
         self.selected_entry_name.trace_add("write", callback=self.select_entry)
@@ -63,7 +66,7 @@ class Gui:
         self.entries_box.focus()
 
         # Text field
-        self.entries_text = Text(main, height=40, width=80, wrap="word")
+        self.entries_text = Text(main, height=40, width=80, wrap="word", font=('Verdana', 10))
         self.entries_text.grid(row=1, column=0, columnspan=4, sticky="NESW")
         self.entries_text.bind("<Shift-Tab>", lambda *args: self.entries_box.focus())
 
